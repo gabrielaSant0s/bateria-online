@@ -11,7 +11,11 @@ for (let cont=0; cont < listaDeTeclas.length; cont++ ){
     tecla.onclick = () => {tocaSom(`#som_${tipoSom}`)}
 
     // deixa o botao laranja quando pressiona tecla
-    tecla.onkeydown = () => {tecla.classList.add('ativa')}
+    tecla.onkeydown = (evento) => {
+        if(evento.code === "Enter" || evento.code === "Space") {
+            tecla.classList.add('ativa');
+        }
+    }
 
     // faz o estilo do botao voltar ao normal quando a tecla deixa de ser pressionada
     tecla.onkeyup = () => {tecla.classList.remove('ativa')}
